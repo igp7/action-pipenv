@@ -1,0 +1,17 @@
+name: 'Pipenv action'
+description: 'Use pipenv commands in Github workflow'
+
+inputs:
+  command:
+    description: "Pipenv command and argument"
+    required: true
+    
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '${{ inputs.command }}'
+ 
+branding:
+  icon: 'award'  
+  color: 'green'
